@@ -50,7 +50,7 @@
 * SSH 접속권한 등을 제한해서 Buffer overrun attack 등을 막을 수 있다.
 
 ### Web application firewall
-* 웹에 특화된 Layer 7 방화벽 - 일종의 reverse proxy로 생각할 수 있다.
+* 웹에 특화된 Layer 7 방화벽 - 일종의 [reverse proxy](https://www.lesstif.com/pages/viewpage.action?pageId=21430345)로 생각할 수 있다.
 * OWASP 기반으로 적용된 차단룰을 바탕으로 방어
 	* cross-site scripting(XSS)
 	* SQL injection 등
