@@ -1,5 +1,3 @@
-#Go/스터디 #러닛
-
 # Security
 ## Encryption and signing
 *  cryptography - 사용되는 키의 보안성과 직결됨
@@ -80,6 +78,7 @@
 * (Nginx를 통해 직접 구현할 수 도 있지만) AWS에도 API gateway 사용하는 것을 추천
 
 ### DDos protection(의 종류들)
+
 	* UDP frament: 네트워크 별 설정된 maximum transmission unit을 초과한 data 전송
 	* UDP flood: 가짜 IP에서 발송된 UPD packet을 전송
 	* DNS: DNS server에 많은 쿼리를 전송
