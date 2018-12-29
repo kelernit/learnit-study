@@ -91,3 +91,52 @@
 1. DDos 공격을 막기 위해, 적절한 firewall과 업데이트를 해줘야 한다.
 2. 또한 cloudflare와 같은 서비스를 이용하는 것도 방법이다.
  
+ 
+ # 보안
+예방 -> 탐지 -> 대응 -> 복구 
+
+## 방화벽 우회하여 공격할 경우를 대비
+### 입력 유효성 검사
+
+#### Validator package
+```
+import validator "gopkg.in/go-playground/validator.v9"
+
+//유효성 검사 작성 as 구조체
+type Request struct {
+	Name  string `json:"name"`
+	Email string `json:"email" validate:"email"`
+	URL   string `json:"url" validate:"url,min=100"`
+}
+
+//유효성 검사 객체 생성
+var validate = validator.New()
+
+//휴효성 검사 Struct
+err = validate.Struct(request)
+	if*err != nil {
+	http.Error(rw, err.Error(), http./StatusBadRequest/)
+	*return*
+}
+```
+
+### 퍼징
+입력 유효성 검사의 경계값을 테스트하는 효과적인 방법
+
+### TLS
+방화벽 뒤의 모든 트래픽을 암호화 한다.
+
+### 데이터 저장소 보안
+데이터베이스에 데이터 저장시 암호화한다. 
+
+### 물리적 기기 접근
+운영환경과 데이터에 대한 접근을 엄격하게 제한 한다. 
+
+## OWASP
+* 토큰은 url에 저장금지
+* xss 및 csrf
+* 안전하지 않은 객체 직접 참조
+
+
+#build-microservice-with-go/chapter8
+
